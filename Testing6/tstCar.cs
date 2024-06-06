@@ -143,11 +143,11 @@ namespace Testing6
             //create a Boolean variable to record if the data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 vinNumber = 3;
+            Int32 vinNumber = 1;
             //invoke the method
             Found = ACar.Find(vinNumber);
             //check the vinNumber property
-            if (ACar.VinNumber != 3)
+            if (ACar.VinNumber != 1)
             {
                 OK = false;
             }
@@ -165,11 +165,11 @@ namespace Testing6
             //create a Boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 vinNumber = 3;
+            Int32 vinNumber = 1;
             //invoke the method
             Found = ACar.Find(vinNumber);
             //check the make property
-            if (ACar.Make != "Toyota")
+            if (ACar.Make != "Tesla")
             {
                 OK = false;
             }
@@ -187,11 +187,11 @@ namespace Testing6
             //create a Boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 vinNumber = 3;
+            Int32 vinNumber = 1;
             //invoke the method
             Found = ACar.Find(vinNumber);
             //check the model property
-            if (ACar.Model != "Corolla")
+            if (ACar.Model != "Tesla")
             {
                 OK = false;
             }
@@ -209,11 +209,11 @@ namespace Testing6
             //create a Boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 vinNumber = 3;
+            Int32 vinNumber = 1;
             //invoke the method
             Found = ACar.Find(vinNumber);
             //check the year property
-            if (ACar.Year != 2020)
+            if (ACar.Year != 2000)
             {
                 OK = false;
             }
@@ -231,7 +231,7 @@ namespace Testing6
             //create a Boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 vinNumber = 3;
+            Int32 vinNumber = 1;
             //invoke the method
             Found = ACar.Find(vinNumber);
             //check the color property
@@ -253,11 +253,11 @@ namespace Testing6
             //create a Boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 vinNumber = 3;
+            Int32 vinNumber = 1;
             //invoke the method
             Found = ACar.Find(vinNumber);
             //check the price property
-            if (ACar.Price != 20000)
+            if (ACar.Price != 1000)
             {
                 OK = false;
             }
@@ -275,11 +275,11 @@ namespace Testing6
             //create a Boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 vinNumber = 3;
+            Int32 vinNumber = 1;
             //invoke the method
             Found = ACar.Find(vinNumber);
             //check the purchaseDate property
-            if (ACar.PurchaseDate != Convert.ToDateTime("12/10/2023"))
+            if (ACar.PurchaseDate != Convert.ToDateTime("06/06/2024"))
             {
                 OK = false;
             }
