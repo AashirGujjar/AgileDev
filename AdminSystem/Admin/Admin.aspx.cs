@@ -19,7 +19,7 @@ public partial class _1_DataEntry : System.Web.UI.Page
             else
             {
                 // If the session is null or the user is not admin, redirect to login page
-                Response.Redirect("Login.aspx");
+                Response.Redirect("~/Login.aspx");
             }
         }
     }
@@ -37,6 +37,6 @@ public partial class _1_DataEntry : System.Web.UI.Page
         Session.Abandon();
 
         // Redirect to the login page
-        Response.Redirect("Login.aspx");
+        Response.Redirect("~/Login.aspx");
     }
 }

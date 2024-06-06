@@ -61,7 +61,7 @@
                 </Columns>
             </asp:GridView>
             <div class="actions">
-                <asp:Button ID="btnAddUser" runat="server" OnClick="BtnAddUser_Click" Text="Add User" />
+               
                 <asp:Button ID="btnLogout" runat="server" OnClick="BtnLogout_Click" Text="Logout" CssClass="logout-button" />
             </div>
         </div>
