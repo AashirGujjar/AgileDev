@@ -1,8 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-
-		ProjectReferences = "{e32146cf-ec09-4709-9881-42adf1b0735b}|ClassLibrary.dll;"
+VisualStudioVersion = 17.9.34902.65
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AdminSystem", "AdminSystem\", "{157421EE-9D45-44EB-9290-6574686CB7FC}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_50298"
 		Debug.AspNetCompiler.PhysicalPath = "AdminSystem\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50298\"
@@ -18,7 +21,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "50298"
-		SlnRelativePath = "AdminSystem\"
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary", "ClassLibrary\ClassLibrary.csproj", "{E32146CF-EC09-4709-9881-42ADF1B0735B}"
