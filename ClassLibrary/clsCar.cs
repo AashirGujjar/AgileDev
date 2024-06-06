@@ -58,14 +58,33 @@ namespace ClassLibrary
 
         public bool Find(int vinNumber)
         {
-            mVinNumber = 3;
-            mMake = "Toyota";
-            mModel = "Corolla";
-            mYear = 2020;
-            mColor = "Red";
-            mPrice = 20000;
-            mPurchaseDate = Convert.ToDateTime("12/10/2023");
-            return true;
+            // Create an instance of the data connection
+            clsDataConnection DB = new clsDataConnection();
+            // Add the parameter for the vinNumber to search for
+            DB.AddParameter("@VinNumber", vinNumber);
+            // Execute the stored procedure
+            DB.Execute("sproc_Cars_FindByvinNumber");
+
+            // If one record is found (there should be either one or zero)
+            if (DB.Count == 1)
+            {
+                // Set the private fields
+                mVinNumber = Convert.ToInt32(DB.DataTable.Rows[0]["vinNumber"]);
+                mMake = Convert.ToString(DB.DataTable.Rows[0]["make"]);
+                mModel = Convert.ToString(DB.DataTable.Rows[0]["model"]);
+                mYear = Convert.ToInt32(DB.DataTable.Rows[0]["year"]);
+                mColor = Convert.ToString(DB.DataTable.Rows[0]["color"]);
+                mPrice = Convert.ToInt32(DB.DataTable.Rows[0]["price"]);
+                mPurchaseDate = Convert.ToDateTime(DB.DataTable.Rows[0]["purchaseDate"]);
+
+                // Return that everything worked OK
+                return true;
+            }
+            else
+            {
+                // Return false indicating a problem
+                return false;
+            }
         }
     }
 }
