@@ -7,6 +7,14 @@ namespace Testing6
     [TestClass]
     public class tstCar
     {
+
+        //good test data
+        string make = "Tesla";
+        string model = "model";
+        String year = Convert.ToString("2000");
+        String color = "Red";
+        string price = Convert.ToString("2000");
+        string purchaseDate = DateTime.Now.ToShortDateString();
         /******************INSTANCE OF THE CLASS TEST******************/
 
         [TestMethod]
@@ -122,7 +130,7 @@ namespace Testing6
             //create a Boolean variable to store the results of the validation
             Boolean Found = false;
             //create some test data to use with the method
-            Int32 vinNumber = 3;
+            Int32 vinNumber = 1;
             //invoke the method
             Found = ACar.Find(vinNumber);
             //test to see if the result is true
@@ -286,6 +294,649 @@ namespace Testing6
             //test to see that the result is correct
             Assert.IsTrue(OK);
         }
+
+        //parametric tests for make
+        [TestMethod]
+        public void MakeMinLessOne()
+        {
+            //Create a instamce of the class we want to create 
+            clsCar ACar = new clsCar();
+
+            //string variable for error message 
+            String Error = "";
+
+            //create some test to pass to the method
+            string make = "";
+
+            //invoke the method 
+            Error = ACar.Valid(make, model, year, color, price, purchaseDate);
+           
+
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void MakeMin()
+        {
+            //Create a instamce of the class we want to create 
+            clsCar ACar = new clsCar();
+
+            //string variable for error message 
+            String Error = "";
+
+            //create some test to pass to the method
+            string make = "q";
+
+            //invoke the method 
+            Error = ACar.Valid(make, model, year, color, price, purchaseDate);
+
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void MakeMinplusone()
+        {
+            //Create a instamce of the class we want to create 
+            clsCar ACar = new clsCar();
+
+            //string variable for error message 
+            String Error = "";
+
+            //create some test to pass to the method
+            string make = "qq";
+
+            //invoke the method 
+            Error = ACar.Valid(make, model, year, color, price, purchaseDate);
+
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void MakeMaxLessOne()
+        {
+            //Create a instamce of the class we want to create 
+            clsCar ACar = new clsCar();
+
+            //string variable for error message 
+            String Error = "";
+
+            //create some test to pass to the method
+            string Name = new string('q', 49);
+
+            //invoke the method 
+            Error = ACar.Valid(make, model, year, color, price, purchaseDate);
+
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void MakeMax()
+        {
+            //Create a instamce of the class we want to create 
+            clsCar ACar = new clsCar();
+
+            //string variable for error message 
+            String Error = "";
+
+            //create some test to pass to the method
+            string Name = new string('q', 50);
+
+            //invoke the method 
+            Error = ACar.Valid(make, model, year, color, price, purchaseDate);
+
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void MakeMid()
+        {
+            //Create a instamce of the class we want to create 
+            clsCar ACar = new clsCar();
+
+            //string variable for error message 
+            String Error = "";
+
+            //create some test to pass to the method
+            string Name = new string('q', 25);
+
+            //invoke the method 
+            Error = ACar.Valid(make, model, year, color, price, purchaseDate);
+
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void MakeMaxPlusOne()
+        {
+            //Create a instamce of the class we want to create 
+            clsCar ACar = new clsCar();
+
+            //string variable for error message 
+            String Error = "";
+
+            //create some test to pass to the method
+            string make = new string('q', 51);
+
+            //invoke the method 
+            Error = ACar.Valid(make, model, year, color, price, purchaseDate);
+
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void MakeExtremeMax()
+        {
+            //Create a instamce of the class we want to create 
+            clsCar ACar = new clsCar();
+
+            //string variable for error message 
+            String Error = "";
+
+            //create some test to pass to the method
+            string make = new string('q', 500);
+
+            //invoke the method 
+            Error = ACar.Valid(make, model, year, color, price, purchaseDate);
+
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+
+        //parameter test for model
+        [TestMethod]
+        public void ModelMinLessOne()
+        {
+            //Create a instamce of the class we want to create 
+            clsCar ACar = new clsCar();
+
+            //string variable for error message 
+            String Error = "";
+
+            //create some test to pass to the method
+            string model = "";
+
+            //invoke the method 
+            Error = ACar.Valid(make, model, year, color, price, purchaseDate);
+
+
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ModelMin()
+        {
+            //Create a instamce of the class we want to create 
+            clsCar ACar = new clsCar();
+
+            //string variable for error message 
+            String Error = "";
+
+            //create some test to pass to the method
+            string model = "q";
+
+            //invoke the method 
+            Error = ACar.Valid(make, model, year, color, price, purchaseDate);
+
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void modelMinplusone()
+        {
+            //Create a instamce of the class we want to create 
+            clsCar ACar = new clsCar();
+
+            //string variable for error message 
+            String Error = "";
+
+            //create some test to pass to the method
+            string model = "qq";
+
+            //invoke the method 
+            Error = ACar.Valid(make, model, year, color, price, purchaseDate);
+
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ModelMaxLessOne()
+        {
+            //Create a instamce of the class we want to create 
+            clsCar ACar = new clsCar();
+
+            //string variable for error message 
+            String Error = "";
+
+            //create some test to pass to the method
+            string model = new string('q', 49);
+
+            //invoke the method 
+            Error = ACar.Valid(make, model, year, color, price, purchaseDate);
+
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ModelMax()
+        {
+            //Create a instamce of the class we want to create 
+            clsCar ACar = new clsCar();
+
+            //string variable for error message 
+            String Error = "";
+
+            //create some test to pass to the method
+            string Model = new string('q', 50);
+
+            //invoke the method 
+            Error = ACar.Valid(make, model, year, color, price, purchaseDate);
+
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ModelMid()
+        {
+            //Create a instamce of the class we want to create 
+            clsCar ACar = new clsCar();
+
+            //string variable for error message 
+            String Error = "";
+
+            //create some test to pass to the method
+            string model = new string('q', 25);
+
+            //invoke the method 
+            Error = ACar.Valid(make, model, year, color, price, purchaseDate);
+
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ModelMaxPlusOne()
+        {
+            //Create a instamce of the class we want to create 
+            clsCar ACar = new clsCar();
+
+            //string variable for error message 
+            String Error = "";
+
+            //create some test to pass to the method
+            string model = new string('q', 51);
+
+            //invoke the method 
+            Error = ACar.Valid(make, model, year, color, price, purchaseDate);
+
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ModelExtremeMax()
+        {
+            //Create a instamce of the class we want to create 
+            clsCar ACar = new clsCar();
+
+            //string variable for error message 
+            String Error = "";
+
+            //create some test to pass to the method
+            string model = new string('q', 500);
+
+            //invoke the method 
+            Error = ACar.Valid(make, model, year, color, price, purchaseDate);
+
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void ColorMinLessOne()
+        {
+            clsCar ACar = new clsCar();
+            String Error = "";
+            string color = "";
+            Error = ACar.Valid(make, model, year, color, price, purchaseDate);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ColorMin()
+        {
+            clsCar ACar = new clsCar();
+            String Error = "";
+            string color = "q";
+            Error = ACar.Valid(make, model, year, color, price, purchaseDate);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ColorMinPlusOne()
+        {
+            clsCar ACar = new clsCar();
+            String Error = "";
+            string color = "qq";
+            Error = ACar.Valid(make, model, year, color, price, purchaseDate);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ColorMaxLessOne()
+        {
+            clsCar ACar = new clsCar();
+            String Error = "";
+            string color = new string('q', 49);
+            Error = ACar.Valid(make, model, year, color, price, purchaseDate);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ColorMax()
+        {
+            clsCar ACar = new clsCar();
+            String Error = "";
+            string color = new string('q', 50);
+            Error = ACar.Valid(make, model, year, color, price, purchaseDate);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ColorMid()
+        {
+            clsCar ACar = new clsCar();
+            String Error = "";
+            string color = new string('q', 25);
+            Error = ACar.Valid(make, model, year, color, price, purchaseDate);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ColorMaxPlusOne()
+        {
+            clsCar ACar = new clsCar();
+            String Error = "";
+            string color = new string('q', 51);
+            Error = ACar.Valid(make, model, year, color, price, purchaseDate);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ColorExtremeMax()
+        {
+            clsCar ACar = new clsCar();
+            String Error = "";
+            string color = new string('q', 500);
+            Error = ACar.Valid(make, model, year, color, price, purchaseDate);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PriceExtremeMin()
+        {
+            clsCar ACar = new clsCar();
+            string Error = "";
+            int Price = -100000001;  // Just below minimum value
+            Error = ACar.Valid(make, model, year, color, Price.ToString(), purchaseDate);
+            Assert.AreNotEqual("", Error);
+        }
+
+        [TestMethod]
+        public void PriceMinLessOne()
+        {
+            clsCar ACar = new clsCar();
+            string Error = "";
+            int Price = -1;  // Just below minimum value
+            Error = ACar.Valid(make, model, year, color, Price.ToString(), purchaseDate);
+            Assert.AreNotEqual("", Error);
+        }
+
+        [TestMethod]
+        public void PriceMin()
+        {
+            clsCar ACar = new clsCar();
+            string Error = "";
+            int Price = 0;  // Minimum value
+            Error = ACar.Valid(make, model, year, color, Price.ToString(), purchaseDate);
+            Assert.AreEqual("", Error);
+        }
+
+        [TestMethod]
+        public void PriceMinPlusOne()
+        {
+            clsCar ACar = new clsCar();
+            string Error = "";
+            int Price = 1;  // Just above minimum value
+            Error = ACar.Valid(make, model, year, color, Price.ToString(), purchaseDate);
+            Assert.AreEqual("", Error);
+        }
+
+        [TestMethod]
+        public void PriceMaxLessOne()
+        {
+            clsCar ACar = new clsCar();
+            string Error = "";
+            int Price = 9999999;  
+            Error = ACar.Valid(make, model, year, color, Price.ToString(), purchaseDate);
+            Assert.AreEqual("", Error);
+        }
+
+        [TestMethod]
+        public void PriceMax()
+        {
+            clsCar ACar = new clsCar();
+            string Error = "";
+            int Price = 10000000;  
+            Error = ACar.Valid(make, model, year, color, Price.ToString(), purchaseDate);
+            Assert.AreEqual("", Error);
+        }
+
+        [TestMethod]
+        public void PriceMaxPlusOne()
+        {
+            clsCar ACar = new clsCar();
+            string Error = "";
+            int Price = 10000001;  
+            Error = ACar.Valid(make, model, year, color, Price.ToString(), purchaseDate);
+            Assert.AreNotEqual("", Error);
+        }
+
+        [TestMethod]
+        public void PriceExtremeMax()
+        {
+            clsCar ACar = new clsCar();
+            string Error = "";
+            int Price = 1000000000;  
+            Error = ACar.Valid(make, model, year, color, Price.ToString(), purchaseDate);
+            Assert.AreNotEqual("", Error);
+        }
+        
+/******************Parameter Tests for purchaseDate******************/
+[TestMethod]
+public void PurchaseDateExtremeMin()
+        {
+            clsCar ACar = new clsCar();
+            String Error = "";
+            DateTime TestDate;
+
+            TestDate = DateTime.Now.Date;
+
+            TestDate = TestDate.AddYears(-200);
+            string purchaseDate = TestDate.ToString();
+            Error = ACar.Valid(make, model, year, color, price.ToString(), purchaseDate);
+
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PurchaseDateMinLessOne()
+        {
+            clsCar ACar = new clsCar();
+            String Error = "";
+            DateTime TestDate;
+
+            TestDate = DateTime.Now.Date;
+
+            TestDate = TestDate.AddYears(-101);
+            string purchaseDate = TestDate.ToString();
+            Error = ACar.Valid(make, model, year, color, price.ToString(), purchaseDate);
+
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PurchaseDateMin()
+        {
+            clsCar ACar = new clsCar();
+            String Error = "";
+            DateTime TestDate;
+
+            TestDate = DateTime.Now.Date;
+
+            string purchaseDate = TestDate.ToString();
+            Error = ACar.Valid(make, model, year, color, price.ToString(), purchaseDate);
+
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PurchaseDateMinPlusOne()
+        {
+            clsCar ACar = new clsCar();
+            String Error = "";
+            DateTime TestDate;
+
+            TestDate = DateTime.Now.Date;
+
+            TestDate = TestDate.AddYears(+1);
+            string purchaseDate = TestDate.ToString();
+            Error = ACar.Valid(make, model, year, color, price.ToString(), purchaseDate);
+
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PurchaseDateExtremeMax()
+        {
+            clsCar ACar = new clsCar();
+            String Error = "";
+            DateTime TestDate;
+
+            TestDate = DateTime.Now.Date;
+
+            TestDate = TestDate.AddYears(100);
+            string purchaseDate = TestDate.ToString();
+            Error = ACar.Valid(make, model, year, color, price.ToString(), purchaseDate);
+
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PurchaseDateInvalidData()
+        {
+            clsCar ACar = new clsCar();
+            String Error = "";
+
+            string purchaseDate = "this is not a date";
+
+            Error = ACar.Valid(make, model, year, color, price.ToString(), purchaseDate);
+
+            Assert.AreNotEqual(Error, "");
+        }
+
+        /******************Parameter Tests for Year******************/
+        [TestMethod]
+        public void YearExtremeMin()
+        {
+            clsCar ACar = new clsCar();
+            String Error = "";
+            int year = DateTime.Now.Year - 201;
+            Error = ACar.Valid(make, model, year.ToString(), color, price.ToString(), purchaseDate);
+            Assert.AreNotEqual("", Error);
+        }
+
+        [TestMethod]
+        public void YearMinLessOne()
+        {
+            clsCar ACar = new clsCar();
+            String Error = "";
+            int year = DateTime.Now.Year - 101;
+            Error = ACar.Valid(make, model, year.ToString(), color, price.ToString(), purchaseDate);
+            Assert.AreNotEqual("", Error);
+        }
+
+        [TestMethod]
+        public void YearMin()
+        {
+            clsCar ACar = new clsCar();
+            String Error = "";
+            int year = DateTime.Now.Year - 100;
+            Error = ACar.Valid(make, model, year.ToString(), color, price.ToString(), purchaseDate);
+            Assert.AreEqual("", Error);
+        }
+
+        [TestMethod]
+        public void YearMinPlusOne()
+        {
+            clsCar ACar = new clsCar();
+            String Error = "";
+            int year = DateTime.Now.Year - 99;
+            Error = ACar.Valid(make, model, year.ToString(), color, price.ToString(), purchaseDate);
+            Assert.AreEqual("", Error);
+        }
+
+        [TestMethod]
+        public void YearMax()
+        {
+            clsCar ACar = new clsCar();
+            String Error = "";
+            int year = DateTime.Now.Year;
+            Error = ACar.Valid(make, model, year.ToString(), color, price.ToString(), purchaseDate);
+            Assert.AreEqual("", Error);
+        }
+
+        [TestMethod]
+        public void YearMaxPlusOne()
+        {
+            clsCar ACar = new clsCar();
+            String Error = "";
+            int year = DateTime.Now.Year + 1;
+            Error = ACar.Valid(make, model, year.ToString(), color, price.ToString(), purchaseDate);
+            Assert.AreNotEqual("", Error);
+        }
+
+        [TestMethod]
+        public void YearExtremeMax()
+        {
+            clsCar ACar = new clsCar();
+            String Error = "";
+            int year = DateTime.Now.Year + 100;
+            Error = ACar.Valid(make, model, year.ToString(), color, price.ToString(), purchaseDate);
+            Assert.AreNotEqual("", Error);
+        }
+
+        [TestMethod]
+        public void YearInvalidData()
+        {
+            clsCar ACar = new clsCar();
+            String Error = "";
+            string year = "invalid year";
+            Error = ACar.Valid(make, model, year, color, price.ToString(), purchaseDate);
+            Assert.AreNotEqual("", Error);
+        }
+
 
 
     }
