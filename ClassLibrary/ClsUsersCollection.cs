@@ -64,6 +64,15 @@ namespace ClassLibrary
                 Index++;
             }
         }
+        public void ReportByUserName(string userName)
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@UserName", userName);
+            DB.Execute("sproc_tblUser_FilterByUserName");
+            PopulateArray(DB);
+        }
+
+
 
         public bool IsEmailRegistered(string email)
         {
@@ -127,5 +136,7 @@ namespace ClassLibrary
             DB.AddParameter("@IsActive", mThisUser.IsActive);
             DB.Execute("sproc_tblUser_Update");
         }
+
+       
     }
 }

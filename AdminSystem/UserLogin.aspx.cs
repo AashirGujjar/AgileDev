@@ -32,11 +32,11 @@ public partial class _1_List : System.Web.UI.Page
                 // Redirect based on user role
                 if (user.Role.Equals("admin", StringComparison.OrdinalIgnoreCase))
                 {
-                    Response.Redirect("~/Admin/Admin.aspx");
+                    Response.Redirect("~/Admin/UserAdmin.aspx");
                 }
                 else
                 {
-                    Response.Redirect("Dashboard.aspx");
+                    Response.Redirect("UserDashboard.aspx");
                 }
             }
             else

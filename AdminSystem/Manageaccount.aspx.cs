@@ -22,7 +22,7 @@ public partial class Manageccount : System.Web.UI.Page
             else
             {
                 // If the session is null, redirect to login page
-                Response.Redirect("Login.aspx");
+                Response.Redirect("UserLogin.aspx");
             }
         }
     }
@@ -72,7 +72,7 @@ public partial class Manageccount : System.Web.UI.Page
         usersCollection.Delete(userId);
         Session.Clear();
         Session.Abandon();
-        Response.Redirect("Login.aspx");
+        Response.Redirect("UserLogin.aspx");
     }
     protected void btnLogout_Click(object sender, EventArgs e)
     {
@@ -81,6 +81,6 @@ public partial class Manageccount : System.Web.UI.Page
         Session.Abandon();
 
         // Redirect to the login page
-        Response.Redirect("Login.aspx");
+        Response.Redirect("UserLogin.aspx");
     }
 }
