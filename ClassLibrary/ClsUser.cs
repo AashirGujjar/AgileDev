@@ -90,10 +90,10 @@ namespace ClassLibrary
             {
                 Error += "The user name may not be blank. ";
             }
-            // UserName must be less than 50 characters
+            // UserName must be less than or equal to 50 characters
             if (userName.Length > 50)
             {
-                Error += "The user name must be less than 50 characters. ";
+                Error += "The user name must be less than or equal to 50 characters. ";
             }
 
             // Password cannot be blank
@@ -101,10 +101,10 @@ namespace ClassLibrary
             {
                 Error += "The password may not be blank. ";
             }
-            // Password must be less than 50 characters
+            // Password must be less than or equal to 50 characters
             if (password.Length > 50)
             {
-                Error += "The password must be less than 50 characters. ";
+                Error += "The password must be less than or equal to 50 characters. ";
             }
 
             // Email cannot be blank
@@ -112,10 +112,10 @@ namespace ClassLibrary
             {
                 Error += "The email may not be blank. ";
             }
-            // Email must be less than 100 characters
+            // Email must be less than or equal to 100 characters
             if (email.Length > 100)
             {
-                Error += "The email must be less than 100 characters. ";
+                Error += "The email must be less than or equal to 100 characters. ";
             }
             // Email must be in a valid format
             if (!Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
@@ -128,14 +128,14 @@ namespace ClassLibrary
             {
                 Error += "The role may not be blank. ";
             }
-            // Role must be less than 20 characters
+            // Role must be less than or equal to 20 characters
             if (role.Length > 20)
             {
-                Error += "The role must be less than 20 characters. ";
+                Error += "The role must be less than or equal to 20 characters. ";
             }
 
             // Return any error messages
             return Error;
         }
     }
-}
+    }

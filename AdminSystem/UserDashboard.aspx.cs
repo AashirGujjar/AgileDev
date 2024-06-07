@@ -20,7 +20,7 @@ public partial class Dashboard : System.Web.UI.Page
             else
             {
                 // If the session is null, redirect to login page
-                Response.Redirect("Login.aspx");
+                Response.Redirect("UserLogin.aspx");
             }
         }
     }
@@ -32,7 +32,7 @@ public partial class Dashboard : System.Web.UI.Page
         Session.Abandon();
 
         // Redirect to the login page
-        Response.Redirect("Login.aspx");
+        Response.Redirect("UserLogin.aspx");
     }
 }
 

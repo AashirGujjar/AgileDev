@@ -18,7 +18,7 @@ public partial class _1Viewer : System.Web.UI.Page
             if (Session["UserID"] == null || Session["UserRole"] == null || Session["UserRole"].ToString() != "admin")
             {
                 // If no user is logged in or user is not admin, redirect to login page
-                Response.Redirect("~/Login.aspx");
+                Response.Redirect("~/UserLogin.aspx");
             }
             else
             {
@@ -85,6 +85,6 @@ public partial class _1Viewer : System.Web.UI.Page
         // Clear the session
         Session.Clear();
         // Redirect to login page
-        Response.Redirect("~/Login.aspx");
+        Response.Redirect("~/UserLogin.aspx");
     }
 }
